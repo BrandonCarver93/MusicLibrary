@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import './App.css'
+import Header from './Header/Header';
+import NavBar from './NavBar/Navbar';
+import MusicTable from './MusicTable/MusicTable'
+import Footer from './Footer/Footer'
 
 import axios from 'axios';
 
 class App extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            songs: []
+        }
     }
+
 
     componentDidMount() {
         this.fetchMusic();
@@ -14,16 +23,23 @@ class App extends Component {
     async fetchMusic(){
         try {
             let response = await axios.get("http://www.devcodecampmusiclibrary.com/api/music")
-            console.log(response)
+            console.log(response.data);
+            this.setState({
+                songs: response.data,
+            })
         }   catch (error) {
             console.log(error)
         }
     }
 
     render() {
+        console.log(this.state)
         return(
-            <div className="App">
-                <h1>Hello world</h1>
+            <div className="container-fluid">
+                <Header />
+                <NavBar />
+                <MusicTable songs={this.state.songs} />
+              <Footer />
             </div>
         );
     }
