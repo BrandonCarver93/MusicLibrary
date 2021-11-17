@@ -13,16 +13,18 @@ const MusicTable = (props) => {
         );
     });
     return (
-        <table>
-  <tr>
-    <th>Song Title</th>
-    <th>Album</th>
-    <th>Artist</th>
-    <th>Genre</th>
-    <th>Release Date</th>
-  </tr>
-{renderedMusic}
-</table>
+        <table class="table table-bordered">
+          <thead>
+              <tr>
+                <th scope="col">Song Title</th>
+                <th scope="col">Album</th>
+                <th scope="col">Artist</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Release Date</th>
+              </tr>
+              {renderedMusic}
+            </thead>
+        </table>
     );
 };
 

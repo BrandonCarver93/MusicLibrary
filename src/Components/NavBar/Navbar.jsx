@@ -16,10 +16,11 @@ function NavBar(props){
             Filter by:
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="www.google.com">Action</a></li>
-            <li><a class="dropdown-item" href="www.google.com">Another action</a></li>
-            <li><hr class="dropdown-divider"></hr></li>
-            <li><a class="dropdown-item" href="www.google.com">Something else here</a></li>
+            <li><a class="dropdown-item" href="www.google.com">Song Title</a></li>
+            <li><a class="dropdown-item" href="www.google.com">Album</a></li>
+            <li><a class="dropdown-item" href="www.google.com">Artist</a></li>
+            <li><a class="dropdown-item" href="www.google.com">Genre</a></li>
+            <li><a class="dropdown-item" href="www.google.com">Release Date</a></li>
           </ul>
         </li>
       </ul>
