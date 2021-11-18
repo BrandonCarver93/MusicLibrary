@@ -1,4 +1,5 @@
 import React from 'react';
+import './MusicTable.css'
 
 const MusicTable = (props) => {
     let renderedMusic = props.songs.map((song) => {
@@ -13,7 +14,8 @@ const MusicTable = (props) => {
         );
     });
     return (
-        <table class="table table-bordered">
+      <div className="center">
+        <table class="table table-dark table-striped">
           <thead>
               <tr>
                 <th scope="col">Song Title</th>
@@ -25,6 +27,7 @@ const MusicTable = (props) => {
               {renderedMusic}
             </thead>
         </table>
+      </div>
     );
 };
 

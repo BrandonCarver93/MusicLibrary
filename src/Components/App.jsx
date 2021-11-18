@@ -15,34 +15,42 @@ class App extends Component {
         }
     }
 
-
     componentDidMount() {
         this.fetchMusic();
     }
 
-    async fetchMusic(){
+    filterMusic = (searchTerm) => {
+        let filteredMusic = this.state.songs.filter((song) => {
+            return (
+                song.title.toLowerCase().includes(searchTerm.toLowerCase()) || song.album.toLowerCase().includes(searchTerm.toLowerCase()) || song.artist.toLowerCase().includes(searchTerm.toLowerCase()) || song.genre.toLowerCase().includes(searchTerm.toLowerCase()) || song.releaseDate.toLowerCase().includes(searchTerm.toLowerCase())
+            );             
+        }); 
+        this.setState({
+            songs: filteredMusic,
+        });
+    };
+
+    async fetchMusic() {
         try {
             let response = await axios.get("http://www.devcodecampmusiclibrary.com/api/music")
-            console.log(response.data);
             this.setState({
                 songs: response.data,
             })
         }   catch (error) {
-            console.log(error)
-        }
+            }
     }
-
+    
     render() {
-        console.log(this.state)
         return(
-            <div className="container-fluid">
+            <div className="bg_image">
+            <div className="App">
                 <Header />
-                <NavBar />
+                <NavBar filterMusic = {this.filterMusic}/>
                 <MusicTable songs={this.state.songs} />
-              <Footer />
+                <Footer />
+            </div>
             </div>
         );
     }
-
 }
 export default App;
