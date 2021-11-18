@@ -1,6 +1,5 @@
 import React from 'react';
 import SearchBar from '../SearchBar/SearchBar'
-import './NavBar.css'
 
 function NavBar(props){
     return(
