@@ -18,11 +18,11 @@ const MusicTable = (props) => {
         <table class="table table-dark table-striped">
           <thead>
               <tr>
-                <th scope="col">Song Title</th>
-                <th scope="col">Album</th>
-                <th scope="col">Artist</th>
-                <th scope="col">Genre</th>
-                <th scope="col">Release Date</th>
+                <th scope="col"><h4>Song Title</h4></th>
+                <th scope="col"><h4>Album</h4></th>
+                <th scope="col"><h4>Artist</h4></th>
+                <th scope="col"><h4>Genre</h4></th>
+                <th scope="col"><h4>Release Date</h4></th>
               </tr>
               {renderedMusic}
             </thead>
