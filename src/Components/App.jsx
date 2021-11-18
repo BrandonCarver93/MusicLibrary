@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css'
+
 import NavBar from './NavBar/Navbar';
 import MusicTable from './MusicTable/MusicTable'
 import Footer from './Footer/Footer'
@@ -20,21 +21,22 @@ class App extends Component {
 
     filterMusic = (searchTerm) => {
         let filteredMusic = this.state.songs.filter((song) => {
-            return (
-                song.title.toLowerCase().includes(searchTerm.toLowerCase()) || song.album.toLowerCase().includes(searchTerm.toLowerCase()) || song.artist.toLowerCase().includes(searchTerm.toLowerCase()) || song.genre.toLowerCase().includes(searchTerm.toLowerCase()) || song.releaseDate.toLowerCase().includes(searchTerm.toLowerCase())
-            );             
-        }); 
+                return (song.title.toLowerCase().includes(searchTerm.toLowerCase()) || song.album.toLowerCase().includes(searchTerm.toLowerCase()) || song.artist.toLowerCase().includes(searchTerm.toLowerCase()) || song.genre.toLowerCase().includes(searchTerm.toLowerCase()) || song.releaseDate.toLowerCase().includes(searchTerm.toLowerCase())
+                );  
+            }); 
         this.setState({
-            songs: filteredMusic,
-        });
+                songs: filteredMusic,
+        
+            });
+    
     };
 
     async fetchMusic() {
         try {
             let response = await axios.get("http://www.devcodecampmusiclibrary.com/api/music")
-            this.setState({
-                songs: response.data,
-            })
+                this.setState({
+                    songs: response.data,
+                })
         }   catch (error) {
             }
     }
@@ -42,11 +44,11 @@ class App extends Component {
     render() {
         return(
             <div className="bg_image">
-            <div className="App">
-                <NavBar filterMusic = {this.filterMusic}/>
-                <MusicTable songs={this.state.songs} />
-                <Footer />
-            </div>
+                <div className="App">
+                    <NavBar filterMusic = {this.filterMusic}/>
+                    <MusicTable songs={this.state.songs} />
+                    <Footer />
+                </div>
             </div>
         );
     }
