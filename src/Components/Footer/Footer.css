@@ -1,5 +1,5 @@
 .footer {
-    background-color: white;
+    background-color: #292b2c;
     width: 100%;
     margin-top: 1em;
     text-align: left;
@@ -7,4 +7,9 @@
     position: relative;
     bottom: 0em;
     overflow-x: hidden;
+}
+
+p {
+    color: white;
+
 }

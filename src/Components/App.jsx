@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css'
-import Header from './Header/Header';
 import NavBar from './NavBar/Navbar';
 import MusicTable from './MusicTable/MusicTable'
 import Footer from './Footer/Footer'
@@ -44,7 +43,6 @@ class App extends Component {
         return(
             <div className="bg_image">
             <div className="App">
-                <Header />
                 <NavBar filterMusic = {this.filterMusic}/>
                 <MusicTable songs={this.state.songs} />
                 <Footer />
