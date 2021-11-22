@@ -21,7 +21,7 @@ class SongCreator extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.createNewSong(this.setState)
+        this.props.createNewSong(this.state);
     }
     render() {
         return (

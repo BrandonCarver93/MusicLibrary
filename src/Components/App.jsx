@@ -16,6 +16,11 @@ class App extends Component {
         }
     }
 
+    createSong = (newSong) => {
+        this.state.songs.push(newSong);
+    }
+    
+
     componentDidMount() {
         this.fetchMusic();
     }
@@ -43,11 +48,6 @@ class App extends Component {
             }
     }
 
-    createSong = (newSong) => {
-        this.songs.push(newSong);
-
-    }
-    
     render() {
         return(
             <div className="bg_image">
