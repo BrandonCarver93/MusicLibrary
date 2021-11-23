@@ -19,10 +19,10 @@ class SongCreator extends Component {
         });
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
+    handleSubmit = () => {
         this.props.createNewSong(this.state);
     }
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>

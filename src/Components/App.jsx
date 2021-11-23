@@ -15,12 +15,7 @@ class App extends Component {
             songs: []
         }
     }
-
-    createSong = (newSong) => {
-        this.state.songs.push(newSong);
-    }
-    
-
+   
     componentDidMount() {
         this.fetchMusic();
     }
@@ -35,18 +30,31 @@ class App extends Component {
                 songs: filteredMusic,
         
             });
-    
     };
-
+  
     async fetchMusic() {
         try {
-            let response = await axios.get("http://localhost:3000/api/songs")
+            let response = await axios.get("http://localhost:5000/api/songs")
                 this.setState({
                     songs: response.data,
                 })
         }   catch (error) {
             }
     }
+   
+    async createSong(newSong) {
+        try{
+            let response = await axios.post('http://localhost:5000/api/songs', newSong)
+            this.state.songs.push(newSong)
+            this.setState({
+                songs: response.data,
+            })
+        }
+        catch(error){
+        }
+    }
+
+  
 
     render() {
         return(
